@@ -1,0 +1,24 @@
+pipeline{
+    agent any 
+    stages{
+        stage('checkout scm'){
+            steps{
+                git branch: 'main', url: 'https://github.com/vinodkumarthati/demo4.git'
+            }
+        }
+        stage('packge'){
+            steps{
+                sh' tar -cvf app.tar app.py'
+
+
+            }
+        }
+    }
+    post{
+        success{
+            echo 'pipeline executed successfully'
+        }
+        failure{
+            echo 'pipeline execution failed'
+    }
+}
