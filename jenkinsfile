@@ -17,6 +17,7 @@ pipeline{
     post{
         success{
             echo 'pipeline executed successfully'
+            archiveArtifacts artifacts: 'app.tar', fingerprint: true
         }
         failure{
             echo 'pipeline execution failed'
