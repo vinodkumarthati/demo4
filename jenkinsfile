@@ -8,7 +8,7 @@ pipeline{
         }
         stage('packge'){
             steps{
-                sh' tar -cvf app.tar app.py'
+                sh ' tar -cvf app.tar app.py'
 
 
             }
